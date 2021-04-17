@@ -1,5 +1,8 @@
 <template>
-  <div class="vue-profile-card" :style="{ height: cardHeight + 'px' }">
+  <div
+    class="vue-profile-card"
+    :style="{ height: cardHeight + 'px', width: cardWidth + 'px' }"
+  >
     <div class="cover">
       <div class="profile-pic"></div>
       <span>@Lukenoutte</span>
@@ -30,13 +33,18 @@ export default /*#__PURE__*/ {
     return {
       icons: {
         facebook: ["fab", "facebook-square"],
-        twitter: ["fab", "twitter"],
+        twitter: ["fab", "twitter-square"],
         youtube: ["fab", "youtube-square"],
+        instagram: ["fab", "instagram-square"],
+        linkedin: ["fab", "linkedin"],
+        whatsapp: ["fab", "whatsapp-square"],
+        pinterest: ["fab", "pinterest-square"],
       },
     };
   },
   props: {
     cardHeight: { type: [String, Number], default: 300 },
+    cardWidth: { type: [String, Number], default: 400 },
     socialLinks: { type: Object },
     bodyPhrase: { type: String },
     profilePic: { type: String },
@@ -83,13 +91,13 @@ export default /*#__PURE__*/ {
   align-items: center;
   flex-direction: column;
 }
-.icons-wrapper{
+.icons-wrapper {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 15px;
 }
-.social-icon{
-  font-size: 25px;
+.social-icon {
+  font-size: 30px;
   color: black;
 }
 </style>

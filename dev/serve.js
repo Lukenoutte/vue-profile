@@ -3,12 +3,24 @@ import Dev from "./serve.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebookSquare,
-  faTwitter,
+  faTwitterSquare,
   faYoutubeSquare,
+  faInstagramSquare,
+  faLinkedin,
+  faWhatsappSquare,
+  faPinterestSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faFacebookSquare, faTwitter, faYoutubeSquare);
+library.add(
+  faFacebookSquare,
+  faTwitterSquare,
+  faYoutubeSquare,
+  faInstagramSquare,
+  faLinkedin,
+  faWhatsappSquare,
+  faPinterestSquare
+);
 
 Vue.component("fa-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
