@@ -17,7 +17,11 @@ export default Vue.extend({
       :socialLinks="{
         facebook: 'https://fb.com',
         twitter: 'https://twitter.com',
-        youtube: 'https://youtube.com'
+        youtube: 'https://youtube.com',
+        email: 'lucas@hotmail.com',
+        poo: 'https://poo.com',
+        link: 'https://test.com',
+        tel: '5575991648461'
       }"
     />
   </div>

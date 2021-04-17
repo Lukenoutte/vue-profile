@@ -11,7 +11,7 @@
       <div class="icons-wrapper">
         <a
           v-for="(link, social) in socialLinks"
-          :href="link"
+          :href="linkFormat[social]"
           v-bind:key="social"
           target="_blank"
           rel="noopener noreferrer"
@@ -39,6 +39,13 @@ export default /*#__PURE__*/ {
         linkedin: ["fab", "linkedin"],
         whatsapp: ["fab", "whatsapp-square"],
         pinterest: ["fab", "pinterest-square"],
+        git: ["fab", "git-square"],
+        blogger: ["fab", "blogger"],
+        email: ["fas", "envelope"],
+        telegram: ["fab", "telegram"],
+        poo: ["fas", "poo"],
+        link: ["fas", "link"],
+        tel: ["fas", "phone-square-alt"],
       },
     };
   },
@@ -49,7 +56,14 @@ export default /*#__PURE__*/ {
     bodyPhrase: { type: String },
     profilePic: { type: String },
   },
-  methods: {},
+  computed: {
+    linkFormat: function () {
+      let links = this.socialLinks;
+      if(links.email) links.email = "mailto:" + links.email
+      if(links.tel) links.tel = "tel:" + links.tel
+      return links
+    }
+  },
 };
 </script>
 

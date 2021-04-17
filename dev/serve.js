@@ -9,7 +9,16 @@ import {
   faLinkedin,
   faWhatsappSquare,
   faPinterestSquare,
+  faGitSquare,
+  faBlogger,
+  faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faPoo,
+  faLink,
+  faPhoneSquareAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(
@@ -19,7 +28,14 @@ library.add(
   faInstagramSquare,
   faLinkedin,
   faWhatsappSquare,
-  faPinterestSquare
+  faPinterestSquare,
+  faGitSquare,
+  faBlogger,
+  faEnvelope,
+  faTelegram,
+  faPoo,
+  faLink,
+  faPhoneSquareAlt
 );
 
 Vue.component("fa-icon", FontAwesomeIcon);
