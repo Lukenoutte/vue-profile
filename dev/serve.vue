@@ -1,11 +1,16 @@
 <script>
 import Vue from "vue";
 import VueProfileCard from "@/vue-profile-card.vue";
-
+import cover from "../assets/luke.jpg";
 export default Vue.extend({
   name: "ServeDev",
   components: {
     VueProfileCard,
+  },
+  data() {
+    return {
+      cover
+    };
   },
 });
 </script>
@@ -14,6 +19,7 @@ export default Vue.extend({
   <div id="app">
     <vue-profile-card
       bodyPhrase="Iai carai."
+      :backgroundImg="cover"
       :socialLinks="{
         facebook: 'https://fb.com',
         twitter: 'https://twitter.com',
@@ -21,7 +27,7 @@ export default Vue.extend({
         email: 'lucas@hotmail.com',
         poo: 'https://poo.com',
         link: 'https://test.com',
-        tel: '5575991648461'
+        tel: '5575991648461',
       }"
     />
   </div>
