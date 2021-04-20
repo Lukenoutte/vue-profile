@@ -10,10 +10,10 @@
           <img v-if="!profileImg" :src="profileBlank" />
           <img v-else :src="profileImg" />
         </div>
-        <strong>@Lukenoutte</strong>
+        <strong :style="{ color: nicknameColor }">{{nickname}}</strong>
       </div>
     </div>
-    <div class="body">
+    <div class="body" :style="{ background: bodyColor }">
       <div class="icons-wrapper">
         <a
           v-for="(link, social) in socialLinks"
@@ -22,10 +22,13 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <fa-icon class="social-icon" :icon="icons[social]"
+          <fa-icon
+            class="social-icon"
+            :style="{ color: iconsColor }"
+            :icon="icons[social]"
         /></a>
       </div>
-      <span>{{ bodyPhrase }}</span>
+      <span :style="{ color: phraseColor }">{{ bodyPhrase }}</span>
     </div>
   </div>
 </template>
@@ -34,11 +37,13 @@
 
 <script>
 import profileBlank from "../assets/blank-profile.jpg";
+import plants from "../assets/plants.jpg";
 
 export default /*#__PURE__*/ {
   name: "VueProfileCard", // vue component name
   data() {
     return {
+      plants,
       profileBlank,
       icons: {
         facebook: ["fab", "facebook-square"],
@@ -63,8 +68,14 @@ export default /*#__PURE__*/ {
     cardWidth: { type: [String, Number], default: 400 },
     socialLinks: { type: Object },
     bodyPhrase: { type: String },
+    nickname: { type: String, default: "@YourNicknameHere" },
+    nicknameColor: { type: String },
     profileImg: { type: [Object, String] },
     backgroundImg: { type: [Object, String] },
+    iconsColor: { type: String },
+    bodyColor: { type: String },
+    phraseColor: { type: String },
+    cardStyle: { type: [String, Number], default: 0 },
   },
   computed: {
     linkFormat: function () {
@@ -74,11 +85,18 @@ export default /*#__PURE__*/ {
       return links;
     },
   },
+  mounted() {
+    if (this.cardStyle == 1) {
+      this.iconsColor = "#264748";
+      this.backgroundImg = plants;
+      this.phraseColor = "#96ab97";
+    }
+  },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 img {
   pointer-events: none;
@@ -96,12 +114,12 @@ img {
   text-align: center;
   border-radius: 15px;
   font-family: "Poppins", sans-serif;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+  box-shadow: 0 5px 4px rgb(0 0 0 / 25%);
 }
 .cover {
   width: 100%;
   height: 60%;
-  background: thistle;
+  background: #c5c5c7;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   display: flex;
@@ -129,6 +147,9 @@ img {
 .cover strong {
   margin-top: 10px;
   color: white;
+  backdrop-filter: blur(1px);
+  padding: 5px 15px;
+  border-radius: 15px;
 }
 
 .body {
@@ -138,10 +159,15 @@ img {
   align-items: center;
   flex-direction: column;
   padding: 2.5%;
+  background: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .body span {
   margin-top: 5px;
+  font-weight: 400;
+  color: #96ab97;
 }
 
 .icons-wrapper {
@@ -151,7 +177,7 @@ img {
 }
 .social-icon {
   font-size: 30px;
-  color: black;
+  color: #959596;
 }
 .bakground-img {
   position: absolute;
@@ -167,6 +193,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-    flex-direction: column;
+  flex-direction: column;
 }
+
 </style>

@@ -1,7 +1,7 @@
 <script>
 import Vue from "vue";
 import VueProfileCard from "@/vue-profile-card.vue";
-import cover from "../assets/luke.jpg";
+import plants from "../assets/plants.jpg";
 export default Vue.extend({
   name: "ServeDev",
   components: {
@@ -9,7 +9,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      cover
+      plants,
     };
   },
 });
@@ -18,8 +18,9 @@ export default Vue.extend({
 <template>
   <div id="app">
     <vue-profile-card
+      cardStyle= "1"
+      mainTitle="!Test"
       bodyPhrase="Iai carai."
-      :backgroundImg="cover"
       :socialLinks="{
         facebook: 'https://fb.com',
         twitter: 'https://twitter.com',
@@ -32,3 +33,18 @@ export default Vue.extend({
     />
   </div>
 </template>
+
+<style scoped>
+#app {
+  background-color: beige;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+</style>
