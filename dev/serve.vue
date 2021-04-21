@@ -12,15 +12,7 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <vue-profile-card
-      cardStyle="green"
-      :socialLinks="{
-        git: 'https://github.com/Lukenoutte',
-        link: 'https://github.com/Lukenoutte/vue-profile-card',
-        facebook: 'https://github.com/Lukenoutte/vue-profile-card',
-        twitter: 'https://github.com/Lukenoutte/vue-profile-card',
-      }"
-    />
+    <vue-profile-card  />
   </div>
 </template>
 

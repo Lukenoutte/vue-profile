@@ -5,9 +5,6 @@
 
 Highly customizable social sharing card.
 
-[Live demo here](https://vue-profile-card.netlify.app/)
-
-
 ## Standard: 
 ![card1](https://user-images.githubusercontent.com/32497719/115598876-45451b00-a2b1-11eb-87fb-c1c9971eba3b.png)
 ## Green Style: 
