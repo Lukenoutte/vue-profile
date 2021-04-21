@@ -21,6 +21,7 @@ export default Vue.extend({
       cardStyle= "1"
       mainTitle="!Test"
       bodyPhrase="Iai carai."
+  
       :socialLinks="{
         facebook: 'https://fb.com',
         twitter: 'https://twitter.com',

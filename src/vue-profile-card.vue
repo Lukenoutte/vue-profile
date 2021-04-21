@@ -4,7 +4,7 @@
     :style="{ height: cardHeight + 'px', width: cardWidth + 'px' }"
   >
     <div class="cover">
-      <img class="bakground-img" v-if="backgroundImg" :src="backgroundImg" />
+      <img class="bakground-img" v-if="backgroundImgData" :src="backgroundImgData" />
       <div class="content-cover">
         <div class="profile-pic">
           <img v-if="!profileImg" :src="profileBlank" />
@@ -24,11 +24,11 @@
         >
           <fa-icon
             class="social-icon"
-            :style="{ color: iconsColor }"
+            :style="{ color: iconsColorData }"
             :icon="icons[social]"
         /></a>
       </div>
-      <span :style="{ color: phraseColor }">{{ bodyPhrase }}</span>
+      <span :style="{ color: phraseColorData }">{{ bodyPhrase }}</span>
     </div>
   </div>
 </template>
@@ -61,6 +61,9 @@ export default /*#__PURE__*/ {
         link: ["fas", "link"],
         tel: ["fas", "phone-square-alt"],
       },
+      backgroundImgData: this.backgroundImg,
+      iconsColorData: this.iconsColor,
+      phraseColorData: this.phraseColor,
     };
   },
   props: {
@@ -87,9 +90,9 @@ export default /*#__PURE__*/ {
   },
   mounted() {
     if (this.cardStyle == 1) {
-      this.iconsColor = "#264748";
-      this.backgroundImg = plants;
-      this.phraseColor = "#96ab97";
+      this.iconsColorData = "#264748";
+      this.backgroundImgData = plants;
+      this.phraseColorData = "#96ab97";
     }
   },
 };
@@ -153,27 +156,28 @@ img {
 }
 
 .body {
-  height: 35%;
+  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 2.5%;
   background: white;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  padding: 0 10%;
 }
 
 .body span {
   margin-top: 5px;
   font-weight: 400;
-  color: #96ab97;
+  color: #c5c5c7;
 }
 
 .icons-wrapper {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 }
 .social-icon {
   font-size: 30px;
