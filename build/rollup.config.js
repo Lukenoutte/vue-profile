@@ -84,7 +84,7 @@ if (!argv.format || argv.format === 'es') {
     input: 'src/entry.esm.js',
     external,
     output: {
-      file: 'dist/vue-social-card.esm.js',
+      file: 'dist/vue-profile.esm.js',
       format: 'esm',
       exports: 'named',
     },
@@ -116,9 +116,9 @@ if (!argv.format || argv.format === 'cjs') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-social-card.ssr.js',
+      file: 'dist/vue-profile.ssr.js',
       format: 'cjs',
-      name: 'VueSocialCard',
+      name: 'vueProfile',
       exports: 'auto',
       globals,
     },
@@ -145,9 +145,9 @@ if (!argv.format || argv.format === 'iife') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-social-card.min.js',
+      file: 'dist/vue-profile.min.js',
       format: 'iife',
-      name: 'VueSocialCard',
+      name: 'vueProfile',
       exports: 'auto',
       globals,
     },

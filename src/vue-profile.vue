@@ -1,6 +1,6 @@
 <template>
   <div
-    class="vue-social-card"
+    class="vue-profile"
     :style="{ height: cardHeight + 'px', width: cardWidth + 'px' }"
   >
     <div class="cover" :style="{ background: coverColorData }">
@@ -73,7 +73,7 @@ export default /*#__PURE__*/ {
       default: () => {
         return {
           git: "https://github.com/Lukenoutte",
-          link: "https://github.com/Lukenoutte/vue-social-card",
+          link: "https://github.com/Lukenoutte/vue-profile",
         };
       },
     },
@@ -111,7 +111,7 @@ img {
   image-rendering: auto;
 }
 
-.vue-social-card {
+.vue-profile {
   display: block;
   width: 400px;
   height: 320px;
@@ -123,7 +123,7 @@ img {
   overflow: hidden;
 }
 
-.vue-social-card:hover .bakground-img {
+.vue-profile:hover .bakground-img {
   transform: scale(1.05);
 }
 

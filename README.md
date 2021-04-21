@@ -1,7 +1,7 @@
-[![npm version](https://badge.fury.io/js/vue-social-card.svg)](https://badge.fury.io/js/vue-social-card)
-[![npm](https://img.shields.io/npm/dm/vue-social-card.svg)](https://www.npmjs.com/package/vue-social-card)
+[![npm version](https://badge.fury.io/js/vue-profile.svg)](https://badge.fury.io/js/vue-profile)
+[![npm](https://img.shields.io/npm/dm/vue-profile.svg)](https://www.npmjs.com/package/vue-profile)
 
-### Vue.js Social Card
+### Vue.js Profile
 
 Highly customizable social sharing card.
 
@@ -13,7 +13,7 @@ Highly customizable social sharing card.
 ## Install:
 
 ```bash
-npm install vue-social-card
+npm install vue-profile
 ```
 
 
@@ -21,7 +21,7 @@ npm install vue-social-card
 
 ```vue
 <template>
-  <vue-social-card 
+  <vue-profile 
   nickname="@Lukenoutte" 
   bodyPhrase="Follow the white rabbit."
   :socialLinks="myLinks"
@@ -30,17 +30,17 @@ npm install vue-social-card
 </template>
 
 <script>
-import VueSocialCard from 'vue-social-card';
+import vueProfile from 'vue-profile';
 import Img from "../assets/img.png";
 export default {
   components: {
-    VueSocialCard,
+    vueProfile,
   }, 
   data(){
     return{
       myLinks: { 
         git: "https://github.com/Lukenoutte",         
-        link: "https://github.com/Lukenoutte/vue-social-card", 
+        link: "https://github.com/Lukenoutte/vue-profile", 
         },
         Img
     }
@@ -68,7 +68,7 @@ export default {
 | phraseColor       | String                | -        | Phrase color.                                                  |
 
 
-### Icon links
+### Icons (socialLinks)
 | Name              | 
 | ----------        | 
 | facebook          |
@@ -93,7 +93,7 @@ export default {
   data(){
       myLinks: { 
         git: "https://github.com/Lukenoutte",         
-        link: "https://github.com/Lukenoutte/vue-social-card",
+        link: "https://github.com/Lukenoutte/vue-profile",
         tel: "5575991777777",
         email: "youremail@mail.com"
         }

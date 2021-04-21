@@ -1,13 +1,13 @@
 {
-  "name": "vue-social-card",
-  "version": "0.0.2",
+  "name": "vue-profile",
+  "version": "0.0.1",
   "description": "Highly customizable social sharing card.",
-  "main": "dist/vue-social-card.ssr.js",
-  "browser": "dist/vue-social-card.esm.js",
-  "module": "dist/vue-social-card.esm.js",
+  "main": "dist/vue-profile.ssr.js",
+  "browser": "dist/vue-profile.esm.js",
+  "module": "dist/vue-profile.esm.js",
   "author": "Lukenoutte",
   "license": "MIT",
-  "unpkg": "dist/vue-social-card.min.js",
+  "unpkg": "dist/vue-profile.min.js",
   "files": [
     "dist/*",
     "src/**/*.vue"
@@ -24,8 +24,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/vue-fontawesome": "^2.0.2",
-    "@vue/compiler-sfc": "^3.0.11"
+    "@fortawesome/vue-fontawesome": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -53,7 +52,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lukenoutte/vue-social-card"
+    "url": "https://github.com/Lukenoutte/vue-profile"
   },
   "keywords": [
     "web",

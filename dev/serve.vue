@@ -1,17 +1,17 @@
 <script>
 import Vue from "vue";
-import VueSocialCard from "@/vue-social-card.vue";
+import vueProfile from "@/vue-profile.vue";
 export default Vue.extend({
   name: "ServeDev",
   components: {
-    VueSocialCard,
+    vueProfile,
   }
 });
 </script>
 
 <template>
   <div id="app">
-    <vue-social-card />
+    <vue-profile />
   </div>
 </template>
 
