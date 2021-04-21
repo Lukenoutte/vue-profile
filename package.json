@@ -1,6 +1,6 @@
 {
   "name": "vue-social-card",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Highly customizable social sharing card.",
   "main": "dist/vue-social-card.ssr.js",
   "browser": "dist/vue-social-card.esm.js",

@@ -30,11 +30,11 @@ npm install vue-social-card
 </template>
 
 <script>
-import VueProfileCard from 'vue-social-card';
+import VueSocialCard from 'vue-social-card';
 import Img from "../assets/img.png";
 export default {
   components: {
-    VueProfileCard,
+    VueSocialCard,
   }, 
   data(){
     return{
