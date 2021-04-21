@@ -1,14 +1,13 @@
 <template>
   <div
-    class="vue-profile-card"
+    class="vue-social-card"
     :style="{ height: cardHeight + 'px', width: cardWidth + 'px' }"
   >
     <div class="cover" :style="{ background: coverColorData }">
       <img class="bakground-img" v-if="coverImgData" :src="coverImgData" />
       <div class="content-cover">
         <div class="profile-pic">
-          <img v-if="!profileImg" :src="profileBlank" />
-          <img v-else :src="profileImg" />
+          <img v-if="profileImg" :src="profileImg" />
         </div>
         <strong :style="{ color: nicknameColorData }">{{ nickname }}</strong>
       </div>
@@ -37,15 +36,11 @@
 
 
 <script>
-import profileBlank from "../assets/blank4.png";
-import plants from "../assets/plants.jpg";
 
 export default /*#__PURE__*/ {
   name: "VueProfileCard", // vue component name
   data() {
     return {
-      plants,
-      profileBlank,
       icons: {
         facebook: ["fab", "facebook-square"],
         twitter: ["fab", "twitter-square"],
@@ -78,7 +73,7 @@ export default /*#__PURE__*/ {
       default: () => {
         return {
           git: "https://github.com/Lukenoutte",
-          link: "https://github.com/Lukenoutte/vue-profile-card",
+          link: "https://github.com/Lukenoutte/vue-social-card",
         };
       },
     },
@@ -91,7 +86,6 @@ export default /*#__PURE__*/ {
     iconsColor: { type: String },
     bodyColor: { type: String },
     phraseColor: { type: String },
-    cardStyle: { type: String },
   },
   computed: {
     linkFormat: function () {
@@ -101,42 +95,12 @@ export default /*#__PURE__*/ {
       return links;
     },
   },
-  mounted() {
-    if (this.cardStyle == "green") {
-      this.iconsColorData = "#264748";
-      this.coverImgData = plants;
-      this.phraseColorData = "#96ab97";
-      this.bodyColorData = "white";
-    }
-
-    if (this.cardStyle == "dark-purple") {
-      this.iconsColorData = "#e7b987";
-      this.coverColorData = "#453e66";
-      this.phraseColorData = "white";
-      this.bodyColorData = "#343155";
-    }
-
-    if (this.cardStyle == "yellow") {
-      this.iconsColorData = "#09070a";
-      this.coverColorData = "#f3cb27";
-      this.phraseColorData = "#09070a";
-      this.nicknameColorData = "#09070a";
-      this.bodyColorData = "white";
-    }
-
-    if (this.cardStyle == "dark-mode") {
-      this.iconsColorData = "white";
-      this.coverColorData = "#2d313c";
-      this.phraseColorData = "white";
-      this.bodyColorData = "#10131c";
-    }
-  },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 img {
   pointer-events: none;
   -webkit-user-drag: none;
@@ -147,7 +111,7 @@ img {
   image-rendering: auto;
 }
 
-.vue-profile-card {
+.vue-social-card {
   display: block;
   width: 400px;
   height: 320px;
@@ -159,7 +123,7 @@ img {
   overflow: hidden;
 }
 
-.vue-profile-card:hover .bakground-img {
+.vue-social-card:hover .bakground-img {
   transform: scale(1.05);
 }
 

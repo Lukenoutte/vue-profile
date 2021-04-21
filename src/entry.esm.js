@@ -1,6 +1,6 @@
 
 // Import vue component
-import component from '@/vue-profile-card.vue';
+import component from '@/vue-social-card.vue';
 
 // Default export is installable instance of component.
 // IIFE injects install function into component, allowing component
