@@ -1,7 +1,7 @@
 {
   "name": "vue-profile-card",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Highly customizable social sharing card.",
   "main": "dist/vue-profile-card.ssr.js",
   "browser": "dist/vue-profile-card.esm.js",
   "module": "dist/vue-profile-card.esm.js",
@@ -47,5 +47,23 @@
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lukenoutte/vue-profile-card"
+  },
+  "keywords": [
+    "web",
+    "front-end",
+    "vue",
+    "vuejs",
+    "profile",
+    "social",
+    "share",
+    "link",
+    "social-network",
+    "custom",
+    "component",
+    "sharing"
+  ]
 }

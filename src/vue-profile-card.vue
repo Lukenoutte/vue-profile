@@ -21,6 +21,7 @@
           v-bind:key="social"
           target="_blank"
           rel="noopener noreferrer"
+          :title="social"
         >
           <fa-icon
             class="social-icon"
@@ -81,7 +82,7 @@ export default /*#__PURE__*/ {
         };
       },
     },
-    bodyPhrase: { type: String, default: "Some phrase here." },
+    bodyPhrase: { type: String },
     nickname: { type: String, default: "@YourNicknameHere" },
     nicknameColor: { type: String },
     profileImg: { type: [Object, String] },
@@ -121,6 +122,13 @@ export default /*#__PURE__*/ {
       this.phraseColorData = "#09070a";
       this.nicknameColorData = "#09070a";
       this.bodyColorData = "white";
+    }
+
+    if (this.cardStyle == "dark-mode") {
+      this.iconsColorData = "white";
+      this.coverColorData = "#2d313c";
+      this.phraseColorData = "white";
+      this.bodyColorData = "#10131c";
     }
   },
 };

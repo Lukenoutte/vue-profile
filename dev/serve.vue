@@ -1,38 +1,26 @@
 <script>
 import Vue from "vue";
 import VueProfileCard from "@/vue-profile-card.vue";
-import plants from "../assets/plants.jpg";
 
 export default Vue.extend({
   name: "ServeDev",
   components: {
     VueProfileCard,
   },
-  data() {
-    return {
-      plants,
-    };
-  },
 });
 </script>
 
 <template>
   <div id="app">
-    <vue-profile-card />
+    <vue-profile-card
+      cardStyle="green"
+      :socialLinks="{
+        git: 'https://github.com/Lukenoutte',
+        link: 'https://github.com/Lukenoutte/vue-profile-card',
+        facebook: 'https://github.com/Lukenoutte/vue-profile-card',
+        twitter: 'https://github.com/Lukenoutte/vue-profile-card',
+      }"
+    />
   </div>
 </template>
 
-<style scoped>
-#app {
-  background-color: beige;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
-}
-</style>
