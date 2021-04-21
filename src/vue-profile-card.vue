@@ -3,17 +3,17 @@
     class="vue-profile-card"
     :style="{ height: cardHeight + 'px', width: cardWidth + 'px' }"
   >
-    <div class="cover">
-      <img class="bakground-img" v-if="backgroundImgData" :src="backgroundImgData" />
+    <div class="cover" :style="{ background: coverColorData }">
+      <img class="bakground-img" v-if="coverImgData" :src="coverImgData" />
       <div class="content-cover">
         <div class="profile-pic">
           <img v-if="!profileImg" :src="profileBlank" />
           <img v-else :src="profileImg" />
         </div>
-        <strong :style="{ color: nicknameColor }">{{nickname}}</strong>
+        <strong :style="{ color: nicknameColorData }">{{ nickname }}</strong>
       </div>
     </div>
-    <div class="body" :style="{ background: bodyColor }">
+    <div class="body" :style="{ background: bodyColorData }">
       <div class="icons-wrapper">
         <a
           v-for="(link, social) in socialLinks"
@@ -36,7 +36,7 @@
 
 
 <script>
-import profileBlank from "../assets/blank-profile.jpg";
+import profileBlank from "../assets/blank4.png";
 import plants from "../assets/plants.jpg";
 
 export default /*#__PURE__*/ {
@@ -61,24 +61,36 @@ export default /*#__PURE__*/ {
         link: ["fas", "link"],
         tel: ["fas", "phone-square-alt"],
       },
-      backgroundImgData: this.backgroundImg,
+      coverImgData: this.coverImg,
       iconsColorData: this.iconsColor,
       phraseColorData: this.phraseColor,
+      coverColorData: this.coverColor,
+      bodyColorData: this.bodyColor,
+      nicknameColorData: this.nicknameColor,
     };
   },
   props: {
     cardHeight: { type: [String, Number], default: 300 },
     cardWidth: { type: [String, Number], default: 400 },
-    socialLinks: { type: Object },
-    bodyPhrase: { type: String },
+    socialLinks: {
+      type: Object,
+      default: () => {
+        return {
+          git: "https://github.com/Lukenoutte",
+          link: "https://github.com/Lukenoutte/vue-profile-card",
+        };
+      },
+    },
+    bodyPhrase: { type: String, default: "Some phrase here." },
     nickname: { type: String, default: "@YourNicknameHere" },
     nicknameColor: { type: String },
     profileImg: { type: [Object, String] },
-    backgroundImg: { type: [Object, String] },
+    coverImg: { type: [Object, String] },
+    coverColor: { type: String },
     iconsColor: { type: String },
     bodyColor: { type: String },
     phraseColor: { type: String },
-    cardStyle: { type: [String, Number], default: 0 },
+    cardStyle: { type: String },
   },
   computed: {
     linkFormat: function () {
@@ -89,10 +101,26 @@ export default /*#__PURE__*/ {
     },
   },
   mounted() {
-    if (this.cardStyle == 1) {
+    if (this.cardStyle == "green") {
       this.iconsColorData = "#264748";
-      this.backgroundImgData = plants;
+      this.coverImgData = plants;
       this.phraseColorData = "#96ab97";
+      this.bodyColorData = "white";
+    }
+
+    if (this.cardStyle == "dark-purple") {
+      this.iconsColorData = "#e7b987";
+      this.coverColorData = "#453e66";
+      this.phraseColorData = "white";
+      this.bodyColorData = "#343155";
+    }
+
+    if (this.cardStyle == "yellow") {
+      this.iconsColorData = "#09070a";
+      this.coverColorData = "#f3cb27";
+      this.phraseColorData = "#09070a";
+      this.nicknameColorData = "#09070a";
+      this.bodyColorData = "white";
     }
   },
 };
@@ -107,6 +135,8 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
+  transition: all 0.7s ease 0s;
+  image-rendering: auto;
 }
 
 .vue-profile-card {
@@ -117,12 +147,18 @@ img {
   text-align: center;
   border-radius: 15px;
   font-family: "Poppins", sans-serif;
-  box-shadow: 0 5px 4px rgb(0 0 0 / 25%);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+  overflow: hidden;
 }
+
+.vue-profile-card:hover .bakground-img {
+  transform: scale(1.05);
+}
+
 .cover {
   width: 100%;
   height: 60%;
-  background: #c5c5c7;
+  background: #5bcf95;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   display: flex;
@@ -139,6 +175,7 @@ img {
   border-radius: 50%;
   box-shadow: 0 5px 20px rgb(0 0 0 / 25%);
   overflow: hidden;
+  border: 3px solid white;
 }
 
 .profile-pic img {
@@ -161,7 +198,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: white;
+  background: #e9ecf1;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 0 10%;
@@ -170,7 +207,7 @@ img {
 .body span {
   margin-top: 5px;
   font-weight: 400;
-  color: #c5c5c7;
+  color: #5498e9;
 }
 
 .icons-wrapper {
@@ -181,7 +218,7 @@ img {
 }
 .social-icon {
   font-size: 30px;
-  color: #959596;
+  color: #5498e9;
 }
 .bakground-img {
   position: absolute;
@@ -199,5 +236,4 @@ img {
   align-items: center;
   flex-direction: column;
 }
-
 </style>
