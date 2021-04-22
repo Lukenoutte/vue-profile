@@ -1,10 +1,10 @@
 <script>
 import Vue from "vue";
-import vueProfile from "@/vue-profile.vue";
+import VueProfile from "@/vue-profile.vue";
 export default Vue.extend({
   name: "ServeDev",
   components: {
-    vueProfile,
+    VueProfile,
   }
 });
 </script>

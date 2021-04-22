@@ -1,6 +1,6 @@
 {
   "name": "vue-profile",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "Highly customizable social sharing card.",
   "main": "dist/vue-profile.ssr.js",
   "browser": "dist/vue-profile.esm.js",
@@ -24,7 +24,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/vue-fontawesome": "^2.0.2"
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@vue/compiler-sfc": "^3.0.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

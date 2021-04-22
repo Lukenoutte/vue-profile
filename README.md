@@ -18,7 +18,14 @@ npm install vue-profile
 
 
 ## Use:
+main.js:
+```js
+import Vue from 'vue'
+import VueProfile from "vue-profile";
 
+Vue.use(VueProfile, 'vue-profile')
+```
+component.vue:
 ```vue
 <template>
   <vue-profile 
@@ -30,12 +37,8 @@ npm install vue-profile
 </template>
 
 <script>
-import vueProfile from 'vue-profile';
 import Img from "../assets/img.png";
 export default {
-  components: {
-    vueProfile,
-  }, 
   data(){
     return{
       myLinks: { 

@@ -38,7 +38,7 @@
 <script>
 
 export default /*#__PURE__*/ {
-  name: "VueProfileCard", // vue component name
+  name: "VueProfile", // vue component name
   data() {
     return {
       icons: {

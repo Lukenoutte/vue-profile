@@ -11,6 +11,7 @@ import {
   faBlogger,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
+
 import {
   faEnvelope,
   faPoo,
@@ -18,6 +19,7 @@ import {
   faPhoneSquareAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 // Import vue component
 import component from "@/vue-profile.vue";
 
@@ -47,7 +49,7 @@ export default /*#__PURE__*/ (() => {
       faPhoneSquareAlt
     );
     Vue.component("fa-icon", FontAwesomeIcon);
-    Vue.component("VueProfileCard", installable);
+    Vue.component("VueProfile", installable);
   };
   return installable;
 })();
